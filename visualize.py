@@ -18,12 +18,14 @@ np.set_printoptions(precision = 3, suppress = True)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--data-path", type = str, default = "./data/test32.npy", help = "Path of the dataset")
+    parser.add_argument("--data-path", type = str, default = "./data/data32.npz", help = "Path of the dataset")
     
     args = parser.parse_args()
 
     # Loading
     data = np.load(args.data_path)
+    if args.data_path.endswith('.npz'):
+        data = data['arr_0']
     print ("Loaded")
     
     input_data = data[:,:5437]
