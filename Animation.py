@@ -46,8 +46,8 @@ class Animation:
 
         self.titles = ["Input", "Output", "Phase"]
         self.animations = [
-            self.get_animation(input_data, InputFrame),
             self.get_animation(output_data, OutputFrame),
+            self.get_animation(input_data, InputFrame),
             self.get_animation(phase_data, GatingFrame)
         ]
     
